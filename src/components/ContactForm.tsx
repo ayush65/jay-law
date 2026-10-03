@@ -44,7 +44,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-navy/10 bg-white px-5 py-3.5 text-navy placeholder:text-navy/40 outline-none transition-all focus:border-auburn focus:ring-4 focus:ring-auburn/15";
+    "w-full rounded-2xl border border-navy/10 bg-mint/60 px-5 py-4 text-navy placeholder:text-navy/35 outline-none transition-all duration-300 focus:border-auburn focus:bg-white focus:ring-4 focus:ring-auburn/15";
 
   return (
     <div className="relative">
@@ -83,14 +83,15 @@ export default function ContactForm() {
           <m.form
             key="form"
             onSubmit={handleSubmit}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="rounded-3xl bg-white p-8 shadow-[var(--shadow-card)] sm:p-10"
+            transition={{ duration: 0.4 }}
+            className="rounded-3xl border border-navy/5 bg-white p-8 shadow-[var(--shadow-card)] sm:p-10"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-bold text-navy">
+                <label htmlFor="name" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-navy/70">
                   Full name
                 </label>
                 <input
@@ -105,7 +106,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-bold text-navy">
+                <label htmlFor="email" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-navy/70">
                   Email
                 </label>
                 <input
@@ -124,7 +125,7 @@ export default function ContactForm() {
 
             <div className="mt-5 grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-bold text-navy">
+                <label htmlFor="phone" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-navy/70">
                   Phone
                 </label>
                 <input
@@ -140,7 +141,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="mb-2 block text-sm font-bold text-navy">
+                <label htmlFor="subject" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-navy/70">
                   Subject
                 </label>
                 <select
@@ -158,7 +159,7 @@ export default function ContactForm() {
             </div>
 
             <div className="mt-5">
-              <label htmlFor="message" className="mb-2 block text-sm font-bold text-navy">
+              <label htmlFor="message" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-navy/70">
                 How can we help?
               </label>
               <textarea
