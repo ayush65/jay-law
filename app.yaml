@@ -1,0 +1,15 @@
+runtime: nodejs22
+env: standard
+service: default
+
+instance_class: F1
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 2
+  target_cpu_utilization: 0.7
+
+env_variables:
+  NEXT_PUBLIC_SITE_URL: "https://jaylawlimited.co.nz"
+  NODE_ENV: "production"
+  NEXT_TELEMETRY_DISABLED: "1"

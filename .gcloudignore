@@ -1,0 +1,14 @@
+.gcloudignore
+.git
+.gitignore
+.next/
+out/
+build/
+node_modules/
+.vercel/
+.env*
+*.tsbuildinfo
+README.md
+AGENTS.md
+CLAUDE.md
+.DS_Store
