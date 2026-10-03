@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-auburn: #6f4e37;
-  --color-auburn-mid: #5a3a28;
-  --color-auburn-dark: #3d2a1c;
-  --color-peach: #ecd9bd;
-  --color-teal: #8a613f;
-  --color-mint: #f0e6d4;
-  --color-sunbeam: #d6a157;
-  --color-jade: #5d4230;
-  --color-navy: #2f2119;
-  --color-navy-deep: #241811;
-  --color-blush: #f7f1e6;
-  --color-softblue: #f1e9d8;
+  /* Brand system — deep forest green, muted gold, white */
+  --color-primary: #00342e;
+  --color-accent: #8a8454;
+  --color-white: #ffffff;
+
+  --color-auburn: #8a8454; /* primary CTA accent */
+  --color-auburn-mid: #7c7748;
+  --color-auburn-dark: #6a6539;
+  --color-peach: #f2f6f4;
+  --color-teal: #00342e;
+  --color-mint: #eaf0ed;
+  --color-sunbeam: #8a8454;
+  --color-jade: #00342e;
+  --color-navy: #00342e;
+  --color-navy-deep: #00261f;
+  --color-blush: #ffffff;
+  --color-softblue: #f4f7f5;
 
   --font-sans: var(--font-cabin);
   --font-heading: var(--font-montserrat);

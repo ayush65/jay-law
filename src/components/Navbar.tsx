@@ -199,7 +199,7 @@ export default function Navbar() {
               href="/contact"
               className="squircle-sm hidden bg-auburn px-6 py-3 text-sm font-bold tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-auburn-mid hover:shadow-lg shadow-auburn/30 sm:inline-flex"
             >
-              Free Consultation
+              Let's Talk
             </Link>
             <button
               ref={openBtnRef}
@@ -286,7 +286,7 @@ export default function Navbar() {
                   onClick={closeMenu}
                   className="squircle-sm inline-flex bg-auburn px-8 py-4 text-base font-bold text-white transition hover:bg-auburn-mid"
                 >
-                  Book a free consultation
+                  Let's Talk
                 </Link>
               </m.div>
             </m.nav>

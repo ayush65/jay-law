@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import PracticeTabs from "@/components/PracticeTabs";
 import { values, contactDetails } from "@/lib/data";
+import { AccordionGroup } from "@/components/Accordion";
 
 export default function HomePage() {
   return (
@@ -147,6 +148,142 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ---------- STATISTICS ---------- */}
+      <section className="bg-navy py-20 text-white lg:py-24">
+        <div className="container-default">
+          <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
+            {[
+              ["2022", "Firm established"],
+              ["2017", "Practising since"],
+              ["2", "Islands served"],
+              ["100%", "Free first consultation"],
+            ].map(([num, label], i) => (
+              <Reveal key={label} delay={i * 0.08}>
+                <p className="font-heading text-5xl font-extrabold text-white md:text-6xl">
+                  <span className="text-sunbeam">{num}</span>
+                </p>
+                <p className="mt-3 text-xs tracking-[0.28em] text-white/60 uppercase">
+                  {label}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- PROCESS ---------- */}
+      <section className="bg-mint py-20 lg:py-28">
+        <div className="container-default">
+          <SectionHeading
+            eyebrow="Our approach"
+            title="A clear path from question to resolution"
+          />
+          <ol className="mt-14 grid gap-8 md:grid-cols-5">
+            {["Discover", "Define", "Prepare", "Advise", "Deliver"].map(
+              (step, i) => (
+                <Reveal key={step} delay={i * 0.07}>
+                  <li className="border-l-2 border-auburn pl-5 md:border-t-2 md:border-l-0 md:pt-5 md:pl-0">
+                    <span className="font-heading text-3xl font-extrabold text-auburn">
+                      0{i + 1}
+                    </span>
+                    <h3 className="font-heading mt-3 text-lg font-bold tracking-widest text-navy uppercase">
+                      {step}
+                    </h3>
+                  </li>
+                </Reveal>
+              )
+            )}
+          </ol>
+        </div>
+      </section>
+
+      {/* ---------- TESTIMONIALS ---------- */}
+      <section className="py-20 lg:py-28">
+        <div className="container-default">
+          <SectionHeading
+            eyebrow="Client feedback"
+            title="Words from our clients"
+            align="center"
+          />
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                quote:
+                  "Jayanthi explained everything clearly and kept us informed at every step.",
+                name: "Priya R.",
+                matter: "Family law",
+              },
+              {
+                quote:
+                  "Honest, practical advice — we always knew exactly where we stood.",
+                name: "D. & K. Turner",
+                matter: "Property",
+              },
+              {
+                quote:
+                  "Our immigration application felt manageable for the first time. Professional and caring.",
+                name: "S. Sharma",
+                matter: "Immigration",
+              },
+            ].map((t, i) => (
+              <Reveal key={t.name} delay={i * 0.08}>
+                <figure className="flex h-full flex-col rounded-2xl border border-mint bg-softblue p-8">
+                  <blockquote className="flex-1 text-lg leading-relaxed text-navy/85">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-navy/10 pt-4">
+                    <p className="font-bold text-navy">{t.name}</p>
+                    <p className="text-xs tracking-[0.24em] text-auburn uppercase">
+                      {t.matter}
+                    </p>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- FAQ PREVIEW ---------- */}
+      <section className="bg-softblue py-20 lg:py-28">
+        <div className="container-default max-w-4xl">
+          <SectionHeading
+            eyebrow="FAQs"
+            title="Common questions"
+            align="center"
+          />
+          <div className="mt-14">
+            <AccordionGroup
+              items={[
+                {
+                  title: "Is the first consultation really free?",
+                  content:
+                    "Yes. Your first consultation is free — a chance to understand your options and realistic outcomes.",
+                },
+                {
+                  title: "Do you charge fixed fees?",
+                  content:
+                    "Where possible we agree fees up front so there are no surprises.",
+                },
+                {
+                  title: "Do you provide Legal Aid?",
+                  content:
+                    "Yes. We can advise on Legal Aid eligibility and help with applications.",
+                },
+              ]}
+            />
+          </div>
+          <p className="mt-10 text-center">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-auburn uppercase transition hover:gap-3"
+            >
+              View all FAQs <ArrowRight size={16} />
+            </Link>
+          </p>
         </div>
       </section>
 
