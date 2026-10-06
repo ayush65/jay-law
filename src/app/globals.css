@@ -1,137 +1,522 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand system — deep forest green, muted gold, white */
-  --color-primary: #00342e;
-  --color-accent: #8a8454;
-  --color-white: #ffffff;
+  /* ---- Brand palette ---- */
+  --color-ivory: #f7f4ec;
+  --color-paper: #fdfbf7;
+  --color-sand: #ece6d8;
+  --color-charcoal: #1c1b17;
+  --color-coal: #131210;
+  --color-forest: #00342e;
+  --color-forest-dark: #00241f;
+  --color-ink: #181713;
+  --color-warmgrey: #66635a;
+  --color-stone: #8c877a;
 
-  --color-auburn: #8a8454; /* primary CTA accent */
-  --color-auburn-mid: #7c7748;
-  --color-auburn-dark: #6a6539;
-  --color-peach: #f2f6f4;
-  --color-teal: #00342e;
-  --color-mint: #eaf0ed;
-  --color-sunbeam: #8a8454;
-  --color-jade: #00342e;
-  --color-navy: #00342e;
-  --color-navy-deep: #00261f;
-  --color-blush: #ffffff;
-  --color-softblue: #f4f7f5;
-
-  --font-sans: var(--font-cabin);
-  --font-heading: var(--font-montserrat);
-
-  --shadow-card: 0 30px 60px -30px rgba(20, 26, 32, 0.35);
+  /* ---- Type ---- */
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, serif;
 }
+
+/* =====================================================================
+   Base
+===================================================================== */
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 88px;
 }
 
 body {
-  background: var(--color-blush);
-  color: var(--color-navy);
+  background: var(--color-ivory);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
-button:not(:disabled),
-[role="button"]:not(:disabled) {
-  cursor: pointer;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-auburn);
-  outline-offset: 2px;
-  border-radius: 4px;
+html {
+  overflow-x: clip;
 }
 
 ::selection {
-  background: var(--color-auburn);
-  color: #fff;
+  background: var(--color-forest);
+  color: var(--color-ivory);
 }
 
-.font-heading {
-  font-family: var(--font-montserrat);
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
+
+button:not(:disabled),
+[role="button"]:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
+/* =====================================================================
+   Layout helpers
+===================================================================== */
 
 .container-default {
   width: 100%;
-  max-width: 1400px;
+  max-width: 74rem;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 1.5rem;
 }
 
-/* "Squircle" pill — organic button / card corner */
-.squircle-sm {
-  border-radius: 1.4rem 0.4rem 1.4rem 0.4rem;
+@media (min-width: 1024px) {
+  .container-default {
+    padding-inline: 2.5rem;
+  }
 }
 
-.marquee-track {
-  animation: marquee 32s linear infinite;
-  will-change: transform;
+/* =====================================================================
+   Typography helpers
+===================================================================== */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-forest);
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.eyebrow::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 2.25rem;
+  background: var(--color-forest);
+  opacity: 0.5;
 }
 
-@keyframes marquee {
+.eyebrow-light {
+  color: var(--color-sand);
+}
+
+.eyebrow-light::before {
+  background: var(--color-sand);
+}
+
+/* =====================================================================
+   Buttons
+===================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.05rem 2rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn svg {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-primary {
+  background: var(--color-forest);
+  color: var(--color-ivory);
+}
+
+.btn-primary:hover {
+  background: var(--color-forest-dark);
+}
+
+.btn-outline {
+  border: 1px solid rgba(24, 23, 19, 0.25);
+  color: var(--color-ink);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-ink);
+  background: rgba(24, 23, 19, 0.04);
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(247, 244, 236, 0.4);
+  color: var(--color-ivory);
+}
+
+.btn-outline-light:hover {
+  border-color: var(--color-ivory);
+  background: rgba(247, 244, 236, 0.08);
+}
+
+/* =====================================================================
+   Nav link underline
+===================================================================== */
+
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =====================================================================
+   Reveal on scroll — safe by default (content is visible unless JS
+   is active and has marked it). IntersectionObserver (client) adds
+   `.is-visible`.
+===================================================================== */
+
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =====================================================================
+   Hero entrance — pure CSS, runs without JS, always ends visible
+===================================================================== */
+
+@keyframes riseIn {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(26px);
   }
   to {
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: none;
   }
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-14px);
+  to {
+    opacity: 1;
   }
 }
 
-.animate-float-slow {
-  animation: float-slow 7s ease-in-out infinite;
+@keyframes imageIn {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.06);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+    transform: scale(1);
+  }
 }
 
-.text-gradient-auburn {
-  background: linear-gradient(110deg, var(--color-auburn) 0%, var(--color-auburn-mid) 60%, var(--color-auburn-dark) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.anim-rise {
+  animation: riseIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.text-gradient-warm {
-  background: linear-gradient(110deg, var(--color-sunbeam) 0%, var(--color-peach) 55%, #ffffff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.anim-fade {
+  animation: fadeIn 1s ease both;
 }
 
-.grid-noise {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 22px 22px;
+.anim-image {
+  animation: imageIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+.delay-1 {
+  animation-delay: 0.08s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.34s;
+}
+.delay-4 {
+  animation-delay: 0.5s;
+}
+.delay-5 {
+  animation-delay: 0.64s;
+}
+.delay-6 {
+  animation-delay: 0.8s;
+}
+
+.delay-img {
+  animation-delay: 0.3s;
+}
+
+/* =====================================================================
+   Testimonial crossfade
+===================================================================== */
+
+.quote-in {
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* =====================================================================
+   FAQ — native <details>, always works
+===================================================================== */
+
+.faq-item {
+  border-bottom: 1px solid rgba(28, 27, 23, 0.14);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(28, 27, 23, 0.14);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.75rem;
+  padding: 1.5rem 0;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-body {
+  max-width: 46rem;
+  padding-bottom: 1.6rem;
+  line-height: 1.75;
+  color: var(--color-warmgrey);
+}
+
+.faq-item[open] .faq-body {
+  animation: faqIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes faqIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.faq-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  transform: translateY(2px);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transform: translateY(-50%);
+  transition: transform 0.35s ease;
+}
+
+.faq-icon::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.faq-item[open] .faq-icon::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* =====================================================================
+   Practice area row
+===================================================================== */
+
+.area-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.25rem;
+  padding: 2rem 0.75rem;
+  border-bottom: 1px solid rgba(28, 27, 23, 0.14);
+  text-decoration: none;
+  transition: background-color 0.35s ease;
+}
+
+.area-row:first-child {
+  border-top: 1px solid rgba(28, 27, 23, 0.14);
+}
+
+.area-row:hover {
+  background: rgba(0, 52, 46, 0.035);
+}
+
+.area-row .area-num {
+  transition: transform 0.35s ease;
+  color: var(--color-stone);
+}
+
+.area-row:hover .area-num {
+  transform: translateY(-4px);
+  color: var(--color-forest);
+}
+
+.area-row .area-arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.area-row:hover .area-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .area-row {
+    grid-template-columns: 6rem 1.1fr 1.4fr 3rem;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 2.25rem 1rem;
+  }
+}
+
+/* =====================================================================
+   Process timeline
+===================================================================== */
+
+.process-step .step-num {
+  font-family: var(--font-serif);
+  color: var(--color-stone);
+  transition: color 0.5s ease;
+}
+
+.process-step.is-active .step-num {
+  color: var(--color-forest);
+}
+
+.process-step .step-title {
+  transition: color 0.5s ease;
+}
+
+.process-step.is-active .step-title {
+  color: var(--color-ink);
+}
+
+.process-step.is-active .step-rule {
+  transform: scaleX(1);
+}
+
+.step-rule {
+  display: block;
+  height: 1px;
+  background: var(--color-forest);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =====================================================================
+   Image hover treatment
+===================================================================== */
+
+.photo-hover img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-hover:hover img {
+  transform: scale(1.045);
+}
+
+.photo-hover .photo-tint {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(
+    to top,
+    rgba(0, 52, 46, 0.35),
+    rgba(0, 52, 46, 0) 55%
+  );
+}
+
+.photo-hover:hover .photo-tint {
+  opacity: 1;
+}
+
+/* =====================================================================
+   Mobile action bar spacer
+===================================================================== */
+
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* =====================================================================
+   Reduced motion
+===================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
-  .marquee-track,
-  .animate-float-slow {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-
-  .marquee-track:hover {
-    animation-play-state: running;
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .step-rule {
+    transform: scaleX(1);
   }
 }

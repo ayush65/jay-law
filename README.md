@@ -6,7 +6,7 @@ A fully responsive marketing website for **Jay Law**, a New Zealand law firm spe
 
 - `/` — Home (hero, marquee, about, interactive practice-area tabs, Legal Aid band, values, CTA)
 - `/services` — Family Law, Elders Law, Immigration + Legal Aid (accordions & detail grids)
-- `/about` — Firm story timeline + our people (Jay & Sadat)
+- `/about` — Firm story timeline + our people (Jay & Sadaat)
 - `/contact` — Office cards (North/South Island) + enquiry form (opens the client's email app)
 - `/faq` — Accordion-styled frequently asked questions
 - `/privacy` — Privacy Policy

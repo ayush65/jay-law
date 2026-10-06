@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Cabin, Montserrat } from "next/font/google";
+import type { ReactNode } from "react";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
-import MotionProvider from "@/components/MotionProvider";
+import MobileActionBar from "@/components/MobileActionBar";
+import ScrollAnimations from "@/components/ScrollAnimations";
 import {
   siteUrl,
   siteName,
@@ -13,15 +14,17 @@ import {
   contactEmail,
 } from "@/lib/site";
 
-const cabin = Cabin({
-  variable: "--font-cabin",
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  style: ["normal", "italic"],
   subsets: ["latin"],
+  variable: "--font-dm-serif",
   display: "swap",
 });
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -47,6 +50,14 @@ const jsonLd = {
   },
   foundingDate: "2022",
 };
+
+/**
+ * Adds `js` to <html> only when motion will be safe (no reduced-motion
+ * preference, IntersectionObserver available). CSS uses it to decide
+ * whether reveal states may hide content; a failsafe timer guarantees
+ * content is never stuck hidden if hydration fails.
+ */
+const revealGuard = `(function(){try{var r=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!r&&"IntersectionObserver"in window){document.documentElement.classList.add("js")}if(!r){window.__revealFailsafe=window.setTimeout(function(){var y=window.innerHeight||document.documentElement.clientHeight;document.querySelectorAll("[data-reveal]:not(.is-visible)").forEach(function(el){if(el.getBoundingClientRect().top<y){el.classList.add("is-visible")}});document.querySelectorAll(".process-step").forEach(function(el){el.classList.add("is-active")})},4500)}}catch(e){}})()`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -89,18 +100,18 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/icon.svg",
-        width: 512,
-        height: 512,
+        url: "/og.png",
+        width: 1200,
+        height: 630,
         alt: siteName,
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${siteName} | Property, Immigration, Family & Commercial Law`,
     description: siteDescription,
-    images: ["/icon.svg"],
+    images: ["/og.png"],
   },
   icons: {
     icon: [
@@ -113,25 +124,37 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#00342E",
+  themeColor: "#f7f4ec",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html
       lang="en-NZ"
-      className={`${cabin.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${dmSerif.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="flex flex-col">
-        <MotionProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <BackToTop />
-        </MotionProvider>
+      <body className="flex min-h-full flex-col">
+        <script dangerouslySetInnerHTML={{ __html: revealGuard }} />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-forest focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ivory"
+        >
+          Skip to content
+        </a>
+        <Header />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <MobileActionBar />
+        <ScrollAnimations />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
       </body>
     </html>

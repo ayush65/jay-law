@@ -13,7 +13,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
         alt="Jay Law Limited"
         width={168}
         height={30}
-        priority
+        loading="eager"
         className="h-8 w-auto md:h-9"
       />
     </Link>

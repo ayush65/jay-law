@@ -1,5 +1,5 @@
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaylaw.co.nz";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaylawlimited.co.nz";
 
 export const siteName = "Jay Law";
 export const siteDescription =

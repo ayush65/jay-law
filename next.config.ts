@@ -34,6 +34,12 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      { source: "/services", destination: "/practice-areas", permanent: true },
+      { source: "/faq", destination: "/faqs", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
