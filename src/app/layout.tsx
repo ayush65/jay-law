@@ -57,7 +57,7 @@ const jsonLd = {
  * whether reveal states may hide content; a failsafe timer guarantees
  * content is never stuck hidden if hydration fails.
  */
-const revealGuard = `(function(){try{var r=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!r&&"IntersectionObserver"in window){document.documentElement.classList.add("js")}if(!r){window.__revealFailsafe=window.setTimeout(function(){var y=window.innerHeight||document.documentElement.clientHeight;document.querySelectorAll("[data-reveal]:not(.is-visible)").forEach(function(el){if(el.getBoundingClientRect().top<y){el.classList.add("is-visible")}});document.querySelectorAll(".process-step").forEach(function(el){el.classList.add("is-active")})},4500)}}catch(e){}})()`;
+const revealGuard = `(function(){try{var r=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!r&&"IntersectionObserver"in window){document.documentElement.classList.add("js")}if(!r){window.__revealFailsafe=window.setTimeout(function(){document.querySelectorAll("[data-reveal]").forEach(function(el){el.classList.add("is-visible")});document.querySelectorAll(".process-step").forEach(function(el){el.classList.add("is-active")})},4500)}}catch(e){}})()`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,4 +1,3 @@
-import Reveal from "@/components/Reveal";
 import { processSteps } from "@/lib/data";
 
 export default function Process() {

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import Reveal from "@/components/Reveal";
 
 export default function Hero() {
   return (
@@ -47,7 +46,8 @@ export default function Hero() {
               src="/jayanthi-vallipuram.jpg"
               alt="Jayanthi Vallipuram, Principal of Jay Law"
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(min-width: 1024px) 42vw, 92vw"
               className="object-cover"
               style={{ objectPosition: "50% 8%" }}
