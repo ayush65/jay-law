@@ -16,15 +16,7 @@ const links = [
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,16 +32,13 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-ivory/90 shadow-[0_1px_0_rgba(28,27,23,0.09)] backdrop-blur-md"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="container-default flex h-16 items-center justify-between lg:h-[4.5rem]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/[0.08] bg-ivory/92 backdrop-blur-md">
+        <div className="flex h-16 w-full items-center justify-between px-5 sm:px-8 lg:h-[4.5rem] xl:px-12">
           <Logo />
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-10 xl:flex"
+          >
             {links.map((l) => (
               <Link
                 key={l.href + l.label}
@@ -60,7 +49,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <div className="hidden items-center gap-7 lg:flex">
+          <div className="hidden items-center gap-8 xl:flex">
             <a
               href={`tel:${contactPhone}`}
               className="inline-flex items-center gap-2 text-[0.82rem] font-semibold tracking-wide text-ink/70 transition-colors hover:text-forest"
@@ -77,7 +66,7 @@ export default function Header() {
           </div>
           <button
             type="button"
-            className="p-2 lg:hidden"
+            className="p-2 xl:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
@@ -92,7 +81,7 @@ export default function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Site menu"
-        className={`fixed inset-0 z-[60] transition-opacity duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[60] transition-opacity duration-500 xl:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
