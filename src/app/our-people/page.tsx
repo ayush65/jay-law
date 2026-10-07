@@ -101,11 +101,11 @@ export default function OurPeoplePage() {
                 {!p.contact && (
                   <div className="mt-10 border-t border-ink/15 pt-7">
                     <a
-                      href="mailto:jaylawandassociates@gmail.com"
+                      href="mailto:sadat@jaylawlimited.co.nz"
                       className="inline-flex items-center gap-2.5 text-lg font-semibold text-forest"
                     >
                       <Mail size={17} />
-                      jaylawandassociates@gmail.com
+                      sadat@jaylawlimited.co.nz
                     </a>
                   </div>
                 )}

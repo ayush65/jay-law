@@ -69,7 +69,7 @@ export default function PrivacyPage() {
             <p className="mt-3 leading-relaxed text-warmgrey">
               Under the Privacy Act 2020, you may request access to, and
               correction of, your personal information. To make a request,
-              contact us at jaylawandassociates@gmail.com.
+              contact us at info@jaylawlimited.co.nz.
             </p>
           </div>
           <div>
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="mt-3 leading-relaxed text-warmgrey">
               Questions about this policy can be sent to
-              jaylawandassociates@gmail.com or by calling 0277218483.
+              info@jaylawlimited.co.nz or by calling 0277218483.
             </p>
           </div>
         </Reveal>

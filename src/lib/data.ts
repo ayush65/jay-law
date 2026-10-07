@@ -192,8 +192,8 @@ export const contactDetails = {
     role: "Barrister & Solicitor",
     phone: "0277218483",
     phoneHref: "tel:0277218483",
-    email: "jaylawandassociates@gmail.com",
-    emailHref: "mailto:jaylawandassociates@gmail.com",
+    email: "jay@jaylawlimited.co.nz",
+    emailHref: "mailto:jay@jaylawlimited.co.nz",
   },
   south: {
     island: "South Island",
@@ -201,8 +201,8 @@ export const contactDetails = {
     role: "Associate",
     phone: "",
     phoneHref: "",
-    email: "jaylawandassociates@gmail.com",
-    emailHref: "mailto:jaylawandassociates@gmail.com",
+    email: "sadat@jaylawlimited.co.nz",
+    emailHref: "mailto:sadat@jaylawlimited.co.nz",
   },
 };
 
