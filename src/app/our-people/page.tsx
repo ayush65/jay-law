@@ -88,13 +88,24 @@ export default function OurPeoplePage() {
                     <p className="mt-1 text-sm text-warmgrey">
                       {p.contact.role} · {p.contact.firm}
                     </p>
-                    <a
-                      href={`tel:${p.contact.phone}`}
-                      className="mt-4 inline-flex items-center gap-2.5 text-lg font-semibold text-forest"
-                    >
-                      <Phone size={17} />
-                      {p.contact.phone}
-                    </a>
+                    {p.contact.phone && (
+                      <a
+                        href={`tel:${p.contact.phone}`}
+                        className="mt-4 inline-flex items-center gap-2.5 text-lg font-semibold text-forest"
+                      >
+                        <Phone size={17} />
+                        {p.contact.phone}
+                      </a>
+                    )}
+                    {p.contact.email && (
+                      <a
+                        href={`mailto:${p.contact.email}`}
+                        className="mt-4 inline-flex items-center gap-2.5 text-lg font-semibold text-forest"
+                      >
+                        <Mail size={17} />
+                        {p.contact.email}
+                      </a>
+                    )}
                   </div>
                 )}
 

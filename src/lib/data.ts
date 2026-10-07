@@ -201,8 +201,8 @@ export const contactDetails = {
     island: "North Island",
     name: "Jayanthi Vallipuram",
     role: "Barrister & Solicitor",
-    phone: "0223787992",
-    phoneHref: "tel:0223787992",
+    phone: "",
+    phoneHref: "",
     email: "jay@jaylawlimited.co.nz",
     emailHref: "mailto:jay@jaylawlimited.co.nz",
   },
@@ -210,8 +210,8 @@ export const contactDetails = {
     island: "South Island",
     name: "Sadat Abbasi",
     role: "Associate",
-    phone: "",
-    phoneHref: "",
+    phone: "0223787992",
+    phoneHref: "tel:0223787992",
     email: "sadat@jaylawlimited.co.nz",
     emailHref: "mailto:sadat@jaylawlimited.co.nz",
   },
@@ -283,7 +283,23 @@ export const timeline = [
   },
 ];
 
-export const people = [
+export const people: Array<{
+  name: string;
+  shortName: string;
+  role: string;
+  photo: string;
+  photoPos: string;
+  island: string;
+  bio: string;
+  tags: string[];
+  contact?: {
+    title: string;
+    role: string;
+    firm: string;
+    phone?: string;
+    email?: string;
+  };
+}> = [
   {
     name: "Jayanthi Vallipuram",
     shortName: "Jay",
@@ -297,7 +313,7 @@ export const people = [
       title: "Jayanthi Vallipuram",
       role: "Barrister and Solicitor",
       firm: "Jay Law",
-      phone: "0223787992",
+      email: "jay@jaylawlimited.co.nz",
     },
   },
   {
@@ -309,6 +325,12 @@ export const people = [
     island: "South Island",
     bio: "Sadat joined Jay Law in 2026, bringing extensive personal experience and wisdom from his legal background. His presence allowed Jay Law to expand its services to the South Island, extending the firm's reach and depth.",
     tags: ["Property", "Commercial", "South Island clients"],
+    contact: {
+      title: "Sadat Abbasi",
+      role: "Associate",
+      firm: "Jay Law · South Island",
+      phone: "0223787992",
+    },
   },
 ];
 

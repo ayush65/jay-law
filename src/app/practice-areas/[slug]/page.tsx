@@ -9,9 +9,8 @@ import {
   faqGroups,
   practiceAreas,
   processSteps,
-  contactDetails,
 } from "@/lib/data";
-import { siteUrl } from "@/lib/site";
+import { contactPhone, siteUrl } from "@/lib/site";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -125,11 +124,11 @@ export default async function PracticeAreaPage({ params }: Params) {
               Book a Consultation
             </Link>
             <a
-              href={contactDetails.north.phoneHref}
+              href={`tel:${contactPhone}`}
               className="btn btn-outline"
             >
               <Phone size={17} />
-              {contactDetails.north.phone}
+              {contactPhone}
             </a>
           </div>
         </div>

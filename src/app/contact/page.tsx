@@ -103,13 +103,15 @@ export default function ContactPage() {
                 {office.address}
               </p>
               <div className="mt-8 space-y-4">
-                <a
-                  href={office.phoneHref}
-                  className="flex items-center gap-4 text-lg font-semibold transition-colors hover:text-forest"
-                >
-                  <Phone size={18} className="text-forest" />
-                  {office.phone}
-                </a>
+                {office.phone && (
+                  <a
+                    href={office.phoneHref}
+                    className="flex items-center gap-4 text-lg font-semibold transition-colors hover:text-forest"
+                  >
+                    <Phone size={18} className="text-forest" />
+                    {office.phone}
+                  </a>
+                )}
                 <a
                   href={office.emailHref}
                   className="flex items-center gap-4 text-lg font-semibold break-all transition-colors hover:text-forest"
