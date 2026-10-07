@@ -234,15 +234,15 @@ export default async function PracticeAreaPage({ params }: Params) {
             {[
               [
                 "Experience, wisdom & integrity",
-                "Jay and Sadaat bring a combination of experience, wisdom, insight and integrity to resolve your legal issues.",
+                "Jay and Sadat bring a combination of experience, wisdom, insight and integrity to resolve your legal issues.",
               ],
               [
                 "Honest, practical advice",
                 "Clear guidance in plain English — we deal with the fine print so you don't have to.",
               ],
               [
-                "Free first consultation",
-                "Book a free first consultation to explore how we can help you and what outcomes are realistic.",
+                "Building strong relationships",
+                "We listen first, explain clearly, and stay with you from initial enquiry through resolution.",
               ],
             ].map(([title, text]) => (
               <li key={title} className="border-t border-ink/10 pt-7">

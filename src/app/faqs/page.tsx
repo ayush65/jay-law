@@ -10,7 +10,7 @@ import { contactPhone } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQs",
   description:
-    "Answers to the questions our clients ask most — free consultations, fees, Legal Aid, family law, property, business and immigration.",
+    "Answers to the questions our clients ask most — fees, Legal Aid, family law, property, business and immigration.",
   alternates: {
     canonical: "/faqs",
   },
@@ -45,7 +45,7 @@ export default function FaqsPage() {
           </h1>
           <p className="anim-rise delay-2 mt-7 max-w-2xl text-lg leading-relaxed text-warmgrey">
             Can&apos;t find what you&apos;re looking for? Ask us directly — your
-            first consultation is free.
+            we&apos;ll talk your options through with you.
           </p>
         </div>
       </section>

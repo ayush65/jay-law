@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { contactDetails, footerLinks } from "@/lib/data";
-import { contactEmail, contactPhone, siteName } from "@/lib/site";
+import { contactEmail, contactPhone, siteName, socialLinks } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,12 +13,13 @@ export default function Footer() {
           <div>
             <Logo dark />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ivory/55">
-              A leading New Zealand firm in Property, Immigration, Family and
-              Commercial Law. Established in 2022 by Jayanthi Vallipuram,
+              A leading New Zealand practice of Barristers and Solicitors in Property,
+              Immigration, Family and Commercial Law. Established in 2022 by
+              Jayanthi Vallipuram,
               serving clients across both islands.
             </p>
             <p className="mt-8 font-serif text-xl text-ivory">
-              Barrister &amp; Solicitor
+              Barristers and Solicitors
             </p>
           </div>
 
@@ -50,10 +51,12 @@ export default function Footer() {
               <li>
                 <strong className="block text-ivory">North Island</strong>
                 {contactDetails.north.name}, {contactDetails.north.role}
+                <br />1 Webster Place, Whanganui
               </li>
               <li>
                 <strong className="block text-ivory">South Island</strong>
                 {contactDetails.south.name}, {contactDetails.south.role}
+                <br />213 Tuam Street
               </li>
               <li>
                 <a
@@ -79,6 +82,38 @@ export default function Footer() {
 
       <div className="border-t border-ivory/10">
         <div className="container-default flex flex-col gap-4 py-7 text-[0.8rem] text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
+          {socialLinks.facebook && (
+            <p className="mb-6 flex gap-5 text-[0.9rem]">
+              <a
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ivory/70 transition-colors hover:text-ivory"
+              >
+                Facebook
+              </a>
+              {socialLinks.instagram && (
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ivory/70 transition-colors hover:text-ivory"
+                >
+                  Instagram
+                </a>
+              )}
+              {socialLinks.linkedin && (
+                <a
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ivory/70 transition-colors hover:text-ivory"
+                >
+                  LinkedIn
+                </a>
+              )}
+            </p>
+          )}
           <p>
             © {year} {siteName}. Information on this website is general in
             nature and does not constitute legal advice.

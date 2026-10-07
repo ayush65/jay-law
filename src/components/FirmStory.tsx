@@ -30,11 +30,11 @@ export default function FirmStory() {
             <p>
               In 2026, Jay Law expanded to the{" "}
               <strong className="font-semibold text-ink">South Island</strong>{" "}
-              with the support of Sadaat Abasi, who brings extensive personal
+              with the support of Sadat Abbasi, who brings extensive personal
               experience and wisdom from his legal background.
             </p>
             <p className="font-serif text-2xl leading-snug text-ink">
-              “Their issues become ours.”
+              “Building strong relationships with our clients.”
             </p>
             <p>
               Together they bring a combination of experience, wisdom, insight

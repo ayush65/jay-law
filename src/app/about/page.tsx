@@ -8,7 +8,7 @@ import { timeline } from "@/lib/data";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "From a sole practitioner to a two-island practice — the story of Jay Law, founded in 2022 by Jayanthi Vallipuram and expanded in 2026 with Sadaat Abasi.",
+    "From a sole practitioner to a two-island practice — the story of Jay Law, founded in 2022 by Jayanthi Vallipuram and expanded in 2026 with Sadat Abbasi.",
   alternates: {
     canonical: "/about",
   },
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <p className="mt-6 text-[1.05rem] leading-[1.85] text-warmgrey">
               In 2026, Jay Law expanded its services to the{" "}
               <strong className="font-semibold text-ink">South Island</strong>{" "}
-              with the support of Sadaat Abasi, who brings extensive personal
+              with the support of Sadat Abbasi, who brings extensive personal
               experience and wisdom from his legal background.
             </p>
           </Reveal>
@@ -58,10 +58,10 @@ export default function AboutPage() {
               we form with our clients.
             </p>
             <p className="mt-8 font-serif text-3xl leading-snug text-ink">
-              “Their issues become ours.”
+              “Building strong relationships with our clients.”
             </p>
             <p className="mt-8 text-[1.05rem] leading-[1.85] text-warmgrey">
-              Every engagement starts with a free first consultation — a real
+              Every engagement starts with a real
               conversation about your situation, what you need, and what a
               realistic path forward looks like. No obligation, no jargon.
             </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
             Our people
           </p>
           <h2 className="mt-6 font-serif text-4xl leading-[1.1] text-ink">
-            Meet Jay and Sadaat.
+            Meet Jay and Sadat.
           </h2>
           <p className="mt-6 text-[1.05rem] leading-[1.8] text-warmgrey">
             A dynamic team combining experience, wisdom, insight and integrity

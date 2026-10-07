@@ -28,7 +28,7 @@ export default function LegalAid() {
         <Reveal delay={120}>
           <div className="divide-y divide-ivory/15 border border-ivory/15">
             {[
-              ["Free first consultation", "Explore your options at no cost."],
+              ["Personal attention", "Every matter gets careful, practical attention from start to finish."],
               [
                 "Family Law proceedings",
                 "Legal Aid available for eligible matters.",

@@ -77,7 +77,7 @@ export default function TermsPage() {
             <h2 className="font-serif text-2xl">6. Contact</h2>
             <p className="mt-3 leading-relaxed text-warmgrey">
               Any correspondence relating to these terms can be sent to
-              info@jaylawlimited.co.nz or by calling 0277218483.
+              info@jaylawlimited.co.nz or by calling 0223787992.
             </p>
           </div>
         </Reveal>

@@ -7,7 +7,7 @@ import { contactDetails } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "North Island or South Island — we reply within one working day. Book your free first consultation with Jay Law today.",
+    "North Island or South Island — we reply within one working day. Book a consultation with Jay Law today.",
   alternates: {
     canonical: "/contact",
   },
@@ -18,6 +18,7 @@ const offices = [
     island: "North Island",
     name: contactDetails.north.name,
     role: contactDetails.north.role,
+    address: "1 Webster Place, Whanganui",
     phone: contactDetails.north.phone,
     phoneHref: contactDetails.north.phoneHref,
     email: contactDetails.north.email,
@@ -27,6 +28,7 @@ const offices = [
     island: "South Island",
     name: contactDetails.south.name,
     role: contactDetails.south.role,
+    address: "213 Tuam Street",
     phone: "Enquire online",
     phoneHref: contactDetails.south.emailHref,
     email: contactDetails.south.email,
@@ -45,49 +47,8 @@ export default function ContactPage() {
           </h1>
           <p className="anim-rise delay-2 mt-7 max-w-2xl text-lg leading-relaxed text-warmgrey">
             North Island or South Island — we reply within one working day.
-            Book your free first consultation today.
+            Book a consultation with Jay Law today.
           </p>
-        </div>
-      </section>
-
-      <section className="pb-12">
-        <div className="container-default grid gap-10 md:grid-cols-2">
-          {offices.map((office) => (
-            <div
-              key={office.island}
-              className="border border-ink/10 bg-paper px-9 py-10"
-            >
-              <p className="text-[0.7rem] font-bold tracking-[0.26em] text-forest uppercase">
-                {office.island}
-              </p>
-              <h2 className="mt-4 font-serif text-3xl text-ink">
-                {office.name}
-              </h2>
-              <p className="mt-1 text-sm font-semibold text-warmgrey">
-                {office.role}
-              </p>
-              <div className="mt-8 space-y-4">
-                <a
-                  href={office.phoneHref}
-                  className="flex items-center gap-4 text-lg font-semibold transition-colors hover:text-forest"
-                >
-                  <Phone size={18} className="text-forest" />
-                  {office.phone}
-                </a>
-                <a
-                  href={office.emailHref}
-                  className="flex items-center gap-4 text-lg font-semibold break-all transition-colors hover:text-forest"
-                >
-                  <Mail size={18} className="shrink-0 text-forest" />
-                  {office.email}
-                </a>
-                <p className="flex items-center gap-4 text-warmgrey">
-                  <Clock size={18} className="text-forest" />
-                  Mon – Fri · 9am – 5pm
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -115,11 +76,54 @@ export default function ContactPage() {
                 is only provided for eligible Family Law proceedings.
               </p>
               <p className="mt-8 text-[0.82rem] leading-relaxed tracking-wide text-ivory/50">
-                Free first consultation · Reply within one working day · Mon–Fri
-                9am–5pm
+                Clear, straightforward advice · Reply within one working day · Mon–Fri 9am–5pm
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-32">
+        <div className="container-default grid gap-10 md:grid-cols-2">
+          {offices.map((office) => (
+            <div
+              key={office.island}
+              className="border border-ink/10 bg-paper px-9 py-10"
+            >
+              <p className="text-[0.7rem] font-bold tracking-[0.26em] text-forest uppercase">
+                {office.island}
+              </p>
+              <h2 className="mt-4 font-serif text-3xl text-ink">
+                {office.name}
+              </h2>
+              <p className="mt-1 text-sm font-semibold text-warmgrey">
+                {office.role}
+              </p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-warmgrey">
+                {office.address}
+              </p>
+              <div className="mt-8 space-y-4">
+                <a
+                  href={office.phoneHref}
+                  className="flex items-center gap-4 text-lg font-semibold transition-colors hover:text-forest"
+                >
+                  <Phone size={18} className="text-forest" />
+                  {office.phone}
+                </a>
+                <a
+                  href={office.emailHref}
+                  className="flex items-center gap-4 text-lg font-semibold break-all transition-colors hover:text-forest"
+                >
+                  <Mail size={18} className="shrink-0 text-forest" />
+                  {office.email}
+                </a>
+                <p className="flex items-center gap-4 text-warmgrey">
+                  <Clock size={18} className="text-forest" />
+                  Mon – Fri · 9am – 5pm
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

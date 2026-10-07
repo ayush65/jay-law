@@ -14,7 +14,7 @@ export default function Logo({ dark = false }: { dark?: boolean }) {
         width={168}
         height={30}
         loading="eager"
-        className="h-8 w-auto md:h-9"
+        className="h-10 w-auto md:h-12"
       />
     </Link>
   );

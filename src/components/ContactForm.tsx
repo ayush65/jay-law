@@ -11,7 +11,7 @@ const SUBJECTS = [
   "Business & Commercial",
   "Immigration",
   "Legal Aid",
-  "Book a free consultation",
+  "Book a consultation",
 ];
 
 const field =

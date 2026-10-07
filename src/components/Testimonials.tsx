@@ -6,6 +6,7 @@ import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
+  if (testimonials.length === 0) return null;
   const t = testimonials[index];
 
   const prev = () =>

@@ -8,7 +8,7 @@ import { people } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Our People",
   description:
-    "Meet Jayanthi Vallipuram, Principal and Barrister & Solicitor, and Sadaat Abasi, Associate — the team behind Jay Law across New Zealand.",
+    "Meet Jayanthi Vallipuram, Principal and Barrister & Solicitor, and Sadat Abbasi, Associate — the team behind Jay Law across New Zealand.",
   alternates: {
     canonical: "/our-people",
   },

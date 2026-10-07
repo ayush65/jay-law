@@ -13,7 +13,7 @@ export default function ConsultationCTA() {
           what comes next.
         </h2>
         <p className="mt-7 text-[1.05rem] leading-relaxed text-ivory/60">
-          Your first consultation is free.
+          Trusted guidance, clear outcomes, one point of contact.
         </p>
         <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/contact" className="btn btn-primary">

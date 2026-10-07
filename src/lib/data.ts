@@ -19,49 +19,10 @@ export type PracticeArea = {
 /* ------------------------------------------------------------------ */
 
 export const practiceAreas: PracticeArea[] = [
-  {
-    slug: "family-law",
-    number: "01",
-    label: "Family Law",
-    tagline: "Sensitive matters. Practical guidance.",
-    description:
-      "Sensitive, practical guidance through relationship property, protection orders and care matters.",
-    items: [
-      {
-        title: "Relationship Property",
-        description:
-          "When you separate, decisions need to be made about how your property is divided. We help you negotiate a settlement and provide expert, practical advice so you obtain the best property settlement for your situation.",
-        details: [
-          "Negotiating separation settlements",
-          "Contracting Out Agreements (prenuptial agreements) to protect your assets in the event you separate from your partner",
-          "Expert practical advice on division of property",
-        ],
-      },
-      {
-        title: "Domestic Violence",
-        description:
-          "We talk through your situation with you and help you apply for a Protection Order, property order and furniture order. A Protection Order will protect you and your children from family violence.",
-        details: [
-          "Protection Order applications",
-          "Property orders and furniture orders",
-          "Support through the court process",
-        ],
-      },
-      {
-        title: "Oranga Tamariki",
-        description:
-          "Oranga Tamariki (formerly known as Child, Youth & Family) deals with care and safety issues relating to children. We can assist you in all your dealings with the Ministry.",
-        details: [
-          "Care and protection matters",
-          "Meetings and correspondence with the Ministry",
-          "Advice on your rights and options",
-        ],
-      },
-    ],
-  },
-  {
+
+{
     slug: "property",
-    number: "02",
+    number: "01",
     label: "Property & Conveyancing",
     tagline: "Clear advice for important property decisions.",
     description:
@@ -79,7 +40,35 @@ export const practiceAreas: PracticeArea[] = [
       },
     ],
   },
-  {
+{
+    slug: "commercial-law",
+    number: "02",
+    label: "Business & Commercial",
+    tagline: "Clear legal support for businesses and commercial decisions.",
+    description:
+      "We support businesses of every size with a full suite of commercial legal services.",
+    items: [
+      {
+        title: "Business Services",
+        description:
+          "We support businesses of every size with a full suite of commercial legal services.",
+        details: [
+          "Company Incorporation",
+          "Joint Venture Agreements",
+          "Partnership Agreements",
+          "Restructurings and Refinancing",
+          "Franchising",
+          "Commercial Leases",
+          "Finance (including lending and security documentation)",
+          "Commercial Contracts",
+          "Forestry Rights",
+          "Buying and Selling a Business",
+          "Directors' and Shareholders' Duties and Obligations",
+        ],
+      },
+    ],
+  },
+{
     slug: "immigration",
     number: "03",
     label: "Immigration",
@@ -123,35 +112,47 @@ export const practiceAreas: PracticeArea[] = [
       },
     ],
   },
-  {
-    slug: "commercial-law",
+{
+    slug: "family-law",
     number: "04",
-    label: "Business & Commercial",
-    tagline: "Clear legal support for businesses and commercial decisions.",
+    label: "Family Law",
+    tagline: "Sensitive matters. Practical guidance.",
     description:
-      "We support businesses of every size with a full suite of commercial legal services.",
+      "Sensitive, practical guidance through relationship property, protection orders and care matters.",
     items: [
       {
-        title: "Business Services",
+        title: "Relationship Property",
         description:
-          "We support businesses of every size with a full suite of commercial legal services.",
+          "When you separate, decisions need to be made about how your property is divided. We help you negotiate a settlement and provide expert, practical advice so you obtain the best property settlement for your situation.",
         details: [
-          "Company Incorporation",
-          "Joint Venture Agreements",
-          "Partnership Agreements",
-          "Restructurings and Refinancing",
-          "Franchising",
-          "Commercial Leases",
-          "Finance (including lending and security documentation)",
-          "Commercial Contracts",
-          "Forestry Rights",
-          "Buying and Selling a Business",
-          "Directors' and Shareholders' Duties and Obligations",
+          "Negotiating separation settlements",
+          "Contracting Out Agreements (prenuptial agreements) to protect your assets in the event you separate from your partner",
+          "Expert practical advice on division of property",
+        ],
+      },
+      {
+        title: "Domestic Violence",
+        description:
+          "We talk through your situation with you and help you apply for a Protection Order, property order and furniture order. A Protection Order will protect you and your children from family violence.",
+        details: [
+          "Protection Order applications",
+          "Property orders and furniture orders",
+          "Support through the court process",
+        ],
+      },
+      {
+        title: "Oranga Tamariki",
+        description:
+          "Oranga Tamariki (formerly known as Child, Youth & Family) deals with care and safety issues relating to children. We can assist you in all your dealings with the Ministry.",
+        details: [
+          "Care and protection matters",
+          "Meetings and correspondence with the Ministry",
+          "Advice on your rights and options",
         ],
       },
     ],
   },
-  {
+{
     slug: "elders-law",
     number: "05",
     label: "Elders Law",
@@ -160,7 +161,7 @@ export const practiceAreas: PracticeArea[] = [
       "Property, business and commercial expertise — from conveyancing to company incorporations.",
     items: [],
   },
-  {
+{
     slug: "legal-aid",
     number: "06",
     label: "Legal Aid",
@@ -169,6 +170,16 @@ export const practiceAreas: PracticeArea[] = [
       "If you cannot afford a lawyer, you may be able to apply for Legal Aid. We can advise you whether or not you may be eligible to apply for aid.",
     items: [],
   },
+  {
+    slug: "employment",
+    number: "07",
+    label: "Employment",
+    tagline: "Practical guidance on workplace matters.",
+    description:
+      "Employment matters for businesses and individuals, handled by the same team behind our Family, Immigration, Commercial and Property work. Our principal has provided Employment law advice since 2017.",
+    items: [],
+  },
+
 ];
 
 export const businessServices = [
@@ -190,14 +201,14 @@ export const contactDetails = {
     island: "North Island",
     name: "Jayanthi Vallipuram",
     role: "Barrister & Solicitor",
-    phone: "0277218483",
-    phoneHref: "tel:0277218483",
+    phone: "0223787992",
+    phoneHref: "tel:0223787992",
     email: "jay@jaylawlimited.co.nz",
     emailHref: "mailto:jay@jaylawlimited.co.nz",
   },
   south: {
     island: "South Island",
-    name: "Sadaat Abasi",
+    name: "Sadat Abbasi",
     role: "Associate",
     phone: "",
     phoneHref: "",
@@ -208,14 +219,14 @@ export const contactDetails = {
 
 export const values = [
   {
-    title: "Their issues become ours.",
+    title: "Building strong relationships with our clients.",
     description:
       "We pride ourselves on the strong relationships we form with our clients. We are with you every step of the way.",
   },
   {
     title: "Experience, wisdom & integrity.",
     description:
-      "Jay and Sadaat bring a combination of experience, wisdom, insight and integrity to resolve your legal issues.",
+      "Jay and Sadat bring a combination of experience, wisdom, insight and integrity to resolve your legal issues.",
   },
   {
     title: "Honest, practical advice.",
@@ -223,16 +234,16 @@ export const values = [
       "Clear guidance in plain English — we deal with the fine print so you don't have to.",
   },
   {
-    title: "Free first consultation.",
+    title: "Accessible, Affordable, Attentive",
     description:
-      "Book a free first consultation to explore how we can help you and what outcomes are realistic.",
+      "Clear terms, honest fees, and straightforward communication — nothing to waste time on.",
   },
 ];
 
 export const processSteps = [
   {
     title: "Discover",
-    text: "A first conversation about your situation, what you need and what a realistic outcome looks like. Your first consultation with us is free.",
+    text: "A first conversation about your situation, what you need, and what is realistic. No obligation.",
   },
   {
     title: "Define",
@@ -252,26 +263,7 @@ export const processSteps = [
   },
 ];
 
-export const testimonials = [
-  {
-    quote:
-      "Jayanthi explained everything clearly and kept us informed at every step.",
-    name: "Priya R.",
-    matter: "Family law",
-  },
-  {
-    quote:
-      "Honest, practical advice — we always knew exactly where we stood.",
-    name: "D. & K. Turner",
-    matter: "Property",
-  },
-  {
-    quote:
-      "Our immigration application felt manageable for the first time. Professional and caring.",
-    name: "S. Sharma",
-    matter: "Immigration",
-  },
-];
+export const testimonials: { quote: string; name: string; matter: string }[] = [];
 
 export const timeline = [
   {
@@ -287,7 +279,7 @@ export const timeline = [
   {
     year: "2026",
     title: "Expansion to the South Island",
-    text: "Jay Law expands its services to the South Island with the support of Sadaat Abasi, extending experience and wisdom to more New Zealanders.",
+    text: "Jay Law expands its services to the South Island with the support of Sadat Abbasi, extending experience and wisdom to more New Zealanders.",
   },
 ];
 
@@ -305,17 +297,17 @@ export const people = [
       title: "Jayanthi Vallipuram",
       role: "Barrister and Solicitor",
       firm: "Jay Law",
-      phone: "0277218483",
+      phone: "0223787992",
     },
   },
   {
-    name: "Sadaat Abasi",
-    shortName: "Sadaat",
+    name: "Sadat Abbasi",
+    shortName: "Sadat",
     role: "Associate",
-    photo: "/sadaat-abasi.jpg",
+    photo: "/sadat-abbasi.jpg",
     photoPos: "50% 15%",
     island: "South Island",
-    bio: "Sadaat joined Jay Law in 2026, bringing extensive personal experience and wisdom from his legal background. His presence allowed Jay Law to expand its services to the South Island, extending the firm's reach and depth.",
+    bio: "Sadat joined Jay Law in 2026, bringing extensive personal experience and wisdom from his legal background. His presence allowed Jay Law to expand its services to the South Island, extending the firm's reach and depth.",
     tags: ["Property", "Commercial", "South Island clients"],
   },
 ];
@@ -329,9 +321,9 @@ export const faqGroups = [
     group: "Getting started",
     items: [
       {
-        title: "Is the first consultation really free?",
+        title: "What should I expect from a first enquiry?",
         content:
-          "Yes. Your first consultation is free. It's a chance for us to understand your situation and for you to get expert, practical advice on what outcomes are realistic.",
+          "A straightforward conversation about your situation and what you need. We listen, explain the options, and let you know if and how we can help.",
       },
       {
         title: "How quickly will I hear back?",
